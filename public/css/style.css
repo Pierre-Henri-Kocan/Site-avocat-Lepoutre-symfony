@@ -40,6 +40,7 @@ body {
 
 .navbar-nav .nav-link.active {
   color: var(--title);
+  font-weight: bold;
 }
 
 @media screen and (max-width: 1000px) {
