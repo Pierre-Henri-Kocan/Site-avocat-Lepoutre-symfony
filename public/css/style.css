@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
+:root{
+  --title: #2136A3;
+  --text: #444444;
+}
+
 * {
   margin: 0;
   padding: 0.5rem;
@@ -10,7 +15,7 @@
 body {
   font-family: "Poppins", sans-serif;
   width: 100%;
-  color: #444444;
+  color: var(--text);
 }
 
 /* ----- Navbar ----- */
@@ -27,6 +32,14 @@ body {
 .container-fluid {
   display: flex;
   justify-content: flex-end;
+}
+
+.nav-item :hover {
+  color: var(--title);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--title);
 }
 
 @media screen and (max-width: 1000px) {
@@ -46,3 +59,35 @@ body {
   }
 }
 
+/* ----- Homepage ----- */
+
+.title h1{
+  text-align: center;
+  color: var(--title);
+}
+
+.content {
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.content p {
+  text-indent: 30px;
+  text-align: justify;
+}
+
+@media screen and (max-width: 1000px) {
+  .content {
+    width: 70%;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+  .title h1 {
+    font-size: 1.2rem;
+  }
+  .content {
+    width: 90%;
+  }
+}

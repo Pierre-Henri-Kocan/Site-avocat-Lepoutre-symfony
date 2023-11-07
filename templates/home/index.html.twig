@@ -4,9 +4,15 @@
 
 {% block body %}
 
-<div>
-    <p>Le cabinet Chauchard Lepoutre Associés est un cabinet d'avocats français indépendant spécialisé en droit des assurances et plus généralement en contentieux des affaires. Il intervient dans l'intérêt de compagnies d'assurance, de courtiers ou d'entreprises confrontées à des problématiques de responsabilité et d'assurance.
-    Le cabinet Chauchard & Associés a été créé en 2007 par Pascal Chauchard. Il a été rejoint en 2022 par Ghislain Lepoutre.
-    Le cabinet Chauchard Lepoutre Associés dispose d'une expérience incontournable en matière d'expertise judiciaire et de contentieux.</p>
+<div class="container">
+    <div class="title">
+        <h1>Votre cabinet spécialisé en droit des assurances</h1>
+    </div>
+    <div class="content">
+        {% for home in homes %}
+            <p>{{ home.content }}</p>
+        {% endfor %}
+    </div>
+
 </div>
 {% endblock %}
