@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DomainController extends AbstractController
 {
-    #[Route('/domain', name: 'app_domain')]
+    #[Route('/domaines', name: 'app_domain')]
     public function index(): Response
     {
         return $this->render('domain/index.html.twig', [
