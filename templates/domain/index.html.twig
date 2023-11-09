@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Domaines{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="title">
+        <h1 class="title-h1">Domaines de compétence</h1>
+    </div>
+</div>
+
+<div class="card-container">
+    {% for domain in domains %}
+        <div class="custom-card">
+            <div class="custom-card-body">
+                <div class="custom-card-image">
+                    <img src="{{ domain.image }}" class="card-img-top" alt="logo-domains">
+                </div>
+                <h5 class="custom-card-title">{{ domain.title }}</h5>
+                <div class="custom-card-text">
+                    <p>{{ domain.content }}</p>
+                        <ul>
+                            {% for detail in domain.detail %}
+                                <li>{{ detail.content }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
