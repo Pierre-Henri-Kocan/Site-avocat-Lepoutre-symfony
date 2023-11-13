@@ -30,33 +30,6 @@ body {
   margin: 0 auto;
 }
 
-.title-h1::before,
-.title-h1::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    height: 2px;
-    width: 8rem;
-    background-color: var(--title);
-}
-
-.title-h1::before {
-    left: 0;
-    transform: translateX(-80%);
-}
-
-.title-h1::after {
-    right: 0;
-    transform: translateX(80%);
-}
-
-@media screen and (max-width: 1000px) {
-  .title-h1::before,
-  .title-h1::after {
-    display: none;
-}
-}
-
 /* ----- Navbar ----- */
 
 .global-nav {
