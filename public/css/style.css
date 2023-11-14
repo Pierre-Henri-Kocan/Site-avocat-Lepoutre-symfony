@@ -30,33 +30,6 @@ body {
   margin: 0 auto;
 }
 
-.title-h1::before,
-.title-h1::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    height: 2px;
-    width: 8rem;
-    background-color: var(--title);
-}
-
-.title-h1::before {
-    left: 0;
-    transform: translateX(-80%);
-}
-
-.title-h1::after {
-    right: 0;
-    transform: translateX(80%);
-}
-
-@media screen and (max-width: 1000px) {
-  .title-h1::before,
-  .title-h1::after {
-    display: none;
-}
-}
-
 /* ----- Navbar ----- */
 
 .global-nav {
@@ -192,6 +165,12 @@ body {
   align-items: flex-start;
 }
 
+.card-container :hover {
+  background-color: var(--title);
+  color: #fff;
+  border-radius: 15px;
+}
+
 .custom-card {
   width: 15rem;
   height: auto;
@@ -202,13 +181,8 @@ body {
   border-left: 1px solid rgb(125, 125, 125, 0.2);
   margin: 1rem;
   padding: 0;
-}
-
-.custom-card :hover {
-  background-color: var(--title);
-  border-radius: 15px;
-  transition: background-color 1s ease;
-  color: #fff;
+  opacity: 0;
+  animation: apparitionAnimation 4s forwards;
 }
 
 .custom-card .custom-card-body {
@@ -246,4 +220,62 @@ body {
   text-align: justify;
   padding: 1rem;
   font-size: 0.8rem;
+}
+
+@keyframes apparitionAnimation {
+  to {
+      opacity: 1;
+  }
+}
+
+/* ----- Team ----- */
+
+.team-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.team-card {
+  width: 30rem;
+  height: auto;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid var(--title);
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: apparitionAnimation 2s forwards;
+}
+
+.team-container :hover {
+  background-color: var(--title);
+  color: #fff;
+}
+
+.team-card-name {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.team-card-text li {
+  list-style: none;
+  text-align: justify;
+  margin-bottom: 1rem;
+  text-indent: 30px;
+}
+
+@media screen and (max-width: 550px) {
+  .team-card-text li {
+    font-size: 0.8rem;
+  }
+}
+
+@keyframes apparitionAnimation {
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }

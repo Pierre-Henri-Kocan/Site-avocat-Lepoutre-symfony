@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Equipe{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="title">
+        <h1 class="title-h1">Equipe</h1>
+    </div>
+</div>
+
+<div class="team-container">
+    {% for team in teams %}
+        <div class="team-card">
+                <h5 class="team-card-name">{{ team.name }}</h5>
+                <div class="team-card-text">
+                        <ul>
+                            {% for detail in team.detail %}
+                                <li>{{ detail.content }}</li>
+                            {% endfor %}
+                        </ul>
+                </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
