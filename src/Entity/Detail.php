@@ -20,6 +20,9 @@ class Detail
     #[ORM\ManyToOne(inversedBy: 'detail')]
     private ?Domain $domain = null;
 
+    #[ORM\ManyToOne(inversedBy: 'detail')]
+    private ?Team $team = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +48,18 @@ class Detail
     public function setDomain(?Domain $domain): static
     {
         $this->domain = $domain;
+
+        return $this;
+    }
+
+    public function getTeam(): ?Team
+    {
+        return $this->team;
+    }
+
+    public function setTeam(?Team $team): static
+    {
+        $this->team = $team;
 
         return $this;
     }
